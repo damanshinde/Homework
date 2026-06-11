@@ -1,0 +1,19 @@
+@if (errorMessage()) {
+  <p>{{ errorMessage() }}</p>
+}
+
+@if (!errorMessage()) {
+  <section>
+    <h2>Products</h2>
+
+    @for (product of products(); track product.id) {
+      <article>
+        <h3>{{ product.title }}</h3>
+        <p>{{ product.description }}</p>
+        <p>Category: {{ product.category }}</p>
+      </article>
+    } @empty {
+      <p>No products available.</p>
+    }
+  </section>
+}
