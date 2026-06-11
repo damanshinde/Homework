@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up Page</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <main class="container">
+      <section class="signup-box">
+        <h1>Sign Up</h1>
+        <form action="#" method="post">
+          <div class="row">
+            <input
+              type="text"
+              name="firstName"
+              placeholder="First Name"
+              required
+            />
+            <input
+              type="text"
+              name="lastName"
+              placeholder="Last Name"
+              required
+            />
+          </div>
+
+          <input type="tel" name="mobile" placeholder="Mobile No." required />
+
+          <input
+            type="email"
+            name="email"
+            placeholder="Email Address"
+            required
+          />
+
+          <div class="row">
+            <input
+              type="password"
+              name="password"
+              placeholder="Password"
+              required
+            />
+            <input
+              type="password"
+              name="confirmPassword"
+              placeholder="Confirm Password"
+              required
+            />
+          </div>
+
+          <div class="agreement-row">
+            <label class="checkbox-label">
+              <input type="checkbox" name="agree" required />
+              <span>I Agree</span>
+            </label>
+
+            <p>
+              By clicking <span class="register-label">Register</span>, you
+              agree to the <a href="#">Terms and Conditions</a> set out by this
+              site, including our Cookie Use.
+            </p>
+          </div>
+
+          <div class="button-row">
+            <button type="submit" class="register-btn">Register</button>
+            <button type="button" class="signin-btn">Sign In</button>
+          </div>
+        </form>
+      </section>
+    </main>
+  </body>
+</html>
