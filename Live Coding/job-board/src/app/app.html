@@ -3,11 +3,15 @@
 
     <h1>Hacker News Jobs Board</h1>
 
+    @if (isLoading()) {
+      <p class="status">Loading jobs...</p>
+    }
+
     @if (errorMessage()) {
       <p class="status error">{{ errorMessage() }}</p>
-    } @else if (!hasLoaded()) {
-      <p class="status">Loading jobs...</p>
-    } @else {
+    }
+
+    @if (!isLoading() && !errorMessage()) {
       <div class="jobs" aria-live="polite">
         @for (job of visibleJobs(); track job.id) {
           <article class="job-card">
