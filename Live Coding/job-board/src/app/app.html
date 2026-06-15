@@ -1,0 +1,36 @@
+<main class="page">
+  <section class="board">
+
+    <h1>Hacker News Jobs Board</h1>
+
+    @if (errorMessage()) {
+      <p class="status error">{{ errorMessage() }}</p>
+    } @else if (!hasLoaded()) {
+      <p class="status">Loading jobs...</p>
+    } @else {
+      <div class="jobs" aria-live="polite">
+        @for (job of visibleJobs(); track job.id) {
+          <article class="job-card">
+            <h2>
+              @if (job.url) {
+                <a [href]="job.url" target="_blank" rel="noopener noreferrer">
+                  {{ job.title }}
+                </a>
+              } @else {
+                <span>{{ job.title }}</span>
+              }
+            </h2>
+
+            <p class="meta">By {{ job.by }} · {{ formatDate(job.time) }}</p>
+          </article>
+        }
+      </div>
+
+      @if (hasMoreJobs()) {
+        <button type="button" class="load-more" (click)="loadMoreJobs()">
+          Load more jobs
+        </button>
+      }
+    }
+  </section>
+</main>
